@@ -2,7 +2,8 @@
 
 :root{
   --mainbg: #1B1B1B;
-  --primary: #BB9847;
+  /* --primary: #F0EAD6; */
+  --primary: #F0EAD6;
   --secondary: #909090;
 }
 
@@ -14,7 +15,7 @@ body {
 }
 
 .border-bottom{
-  border-bottom: 1px solid #BB9847 !important;
+  border-bottom: 1px solid #F0EAD6 !important;
 }
 
 .navbar-dark .navbar-nav .nav-link{
