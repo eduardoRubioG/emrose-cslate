@@ -2,7 +2,8 @@
 
 :root{
   --mainbg: #1B1B1B;
-  --primary: #BB9847;
+  /* --primary: #F0EAD6; */
+  --primary: #F0EAD6;
   --secondary: #909090;
 }
 
@@ -10,11 +11,11 @@ body {
   background: var(--mainbg);
   color: var(--primary);
   font-family: 'Poppins', sans-serif !important;
-  /* font-family: Open Sans !important;  */
+  overflow: hidden;
 }
 
 .border-bottom{
-  border-bottom: 1px solid #BB9847 !important;
+  border-bottom: 1px solid var(--primary) !important;
 }
 
 .navbar-dark .navbar-nav .nav-link{

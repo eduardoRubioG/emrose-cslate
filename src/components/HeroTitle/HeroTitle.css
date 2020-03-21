@@ -1,0 +1,51 @@
+#svg-hero-container {
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  height: 200px;
+	width: 100%;
+	padding-bottom: 100%; 
+	vertical-align: middle; 
+	overflow: hidden; 
+}
+
+#hero-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#hero-text > g > path {
+  opacity: 0; 
+}
+
+#hero-rose-logo {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#hero-rose-logo > g > path {
+  opacity: 0; 
+}
+@keyframes line-anim{
+  from { 
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+  to{ 
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from{
+    fill: transparent; 
+  }
+  to{ 
+    fill: #F0EAD6;
+  }
+}
