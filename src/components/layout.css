@@ -11,11 +11,11 @@ body {
   background: var(--mainbg);
   color: var(--primary);
   font-family: 'Poppins', sans-serif !important;
-  /* font-family: Open Sans !important;  */
+  overflow: hidden;
 }
 
 .border-bottom{
-  border-bottom: 1px solid #F0EAD6 !important;
+  border-bottom: 1px solid var(--primary) !important;
 }
 
 .navbar-dark .navbar-nav .nav-link{

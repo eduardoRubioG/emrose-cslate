@@ -6,13 +6,12 @@ import Hero from "../components/Hero"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <>
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hello world I am hard coded</h1>
-  </Layout>
-  <Hero/>
-  </>
+    <Layout>
+      <SEO title="Home" />
+        <div className="container"> 
+          <Hero/>
+        </div>
+    </Layout>
 );
 
 export default IndexPage
