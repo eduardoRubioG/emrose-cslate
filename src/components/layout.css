@@ -12,6 +12,7 @@ body {
   color: var(--primary);
   font-family: 'Poppins', sans-serif !important;
   overflow: hidden;
+  padding-top: 57px;
 }
 
 .border-bottom{

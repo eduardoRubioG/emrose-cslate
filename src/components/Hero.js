@@ -10,6 +10,7 @@ export default class Hero extends Component {
     return (
       <div className="container">
         <HeroTitle />
+        <h1>Hello</h1>
       </div>
     )
   }
