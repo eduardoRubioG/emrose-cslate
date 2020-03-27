@@ -1,0 +1,15 @@
+#hero-header {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.hero-descriptor {
+  /* background-color: blue; */
+  padding: 0rem 2rem;
+  text-align: center;
+}
+
+#hero-button {
+  margin: 1rem;
+  padding: 10px;
+}

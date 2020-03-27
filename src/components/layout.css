@@ -11,7 +11,8 @@ body {
   background: var(--mainbg);
   color: var(--primary);
   font-family: 'Poppins', sans-serif !important;
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding-top: 57px;
 }
 
 .border-bottom{
@@ -30,4 +31,10 @@ body {
 .navbar-nav > li{
   padding-left:15px;
   padding-right:15px;
+}
+
+.container-hero { 
+  /* background-color: red; */
+  padding-top: 12vh;
+  padding-bottom: 12vh;
 }
