@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import HeroTitle from './HeroTitle/HeroTitle'
+import HeroTitle from '../HeroTitle/HeroTitle'
+import './Hero.css'
 
 export default class Hero extends Component {
   state = { 
@@ -10,7 +11,7 @@ export default class Hero extends Component {
     return (
       <div className="container">
         <HeroTitle />
-        <h1>Hello</h1>
+        <h4 id="hero-header">Creative Productions Based in Atlanta</h4>
       </div>
     )
   }

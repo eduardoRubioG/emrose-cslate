@@ -1,26 +1,48 @@
 .svg-hero-container {
   /* margin-top: 30%; */
   /* background-color: red;  */
+  top: -50%;
   width: 100%;
   height: 0;
-  padding-top: 250px;
+  /* padding-top: 250px; */
   position: relative;
 }
 
-svg{
+svg {
   position: absolute;
   top: 0;
   left: 0;
 }
 
+.hero {
+  background-size: cover;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  /* padding: 5rem 1rem; */
+
+  /* CSS Grid */ 
+  display: grid;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 230px;
+}
+
+.hero-grid-item {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+}
+
 #t {
-  /* background-color: yellow; */
-  padding-top: 80px;
+  background-color: yellow;
+  /* padding-top: 40px; */
 }
 
 #t2 {
-  /* background-color: green; */
-  padding-top: 290px;
+  background-color: green;
+  /* padding: 40px; */
 } 
 
 #hero-text {
@@ -36,7 +58,7 @@ svg{
 }
 
 #hero-rose-logo {
-  position: absolute;
+  /* position: absolute; */
   /* top: 60%; */
   /* left: 50%; */
   /* width: 400px; */
