@@ -10,22 +10,27 @@ export default class Navbar extends Component {
       {
         id:1,
         path:'/',
-        text: 'Home'
+        text: 'home'
       },
       {
         id:2,
         path:'/about',
-        text: 'About'
+        text: 'about'
       },
       {
         id:3,
         path:'/portfolio',
-        text: 'Portfolio'
+        text: 'portfolio'
       },
       {
-        id:4,
+        id: 4,
+        path: '/journal',
+        text: 'journal'
+      },
+      {
+        id:5,
         path:'/contact',
-        text: 'Contact Me'
+        text: 'contact me'
       },
     ],
   }
@@ -51,8 +56,8 @@ export default class Navbar extends Component {
           <ul className="navbar-nav mx-auto">{
             this.state.links.map(links=>{
               return(
-                <li key={links.key} className="nav-item">
-                  <Link to={links.path} className="nav-link text-capitalize">
+                <li key={links.id} className="nav-item">
+                  <Link to={links.path} className="nav-link">
                     {links.text}
                   </Link> 
                 </li>

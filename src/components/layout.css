@@ -32,3 +32,9 @@ body {
   padding-left:15px;
   padding-right:15px;
 }
+
+.container-hero { 
+  /* background-color: red; */
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+}
