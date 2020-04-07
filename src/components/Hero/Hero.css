@@ -27,10 +27,10 @@
 #arrow { 
   width: 4vw;
   height: 4vh;
-  -webkit-animation: pulse 2s infinite delay 5s;
-  -moz-animation: pulse 2s infinite delay 5s;
-  -o-animation: pulse 2s infinite delay 5s;
-   animation: fade pulse 2s infinite delay 5s;
+  -webkit-animation: pulse 2s infinite;
+  -moz-animation: pulse 2s infinite;
+  -o-animation: pulse 2s infinite;
+   animation: fade pulse 2s infinite;
 }
 
 /* Animation Stuff  */
