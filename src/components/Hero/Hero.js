@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import HeroTitle from '../HeroTitle/HeroTitle'
 import './Hero.css'
 
 export default class Hero extends Component {
