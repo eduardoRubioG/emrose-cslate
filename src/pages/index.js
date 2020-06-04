@@ -12,6 +12,7 @@ const IndexPage = () => (
           <Hero/>
           <SectionHeader 
               title="Welcome to my page!"
+              content="Sit culpa proident fugiat tempor reprehenderit officia id velit."
           />
     </Layout>
 );

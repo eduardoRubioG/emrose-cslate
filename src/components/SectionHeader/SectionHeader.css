@@ -1,7 +1,8 @@
 .sh-container { 
   margin: 0 auto; 
-  width: 100%; 
+  width: 70%; 
   min-width: 200px; 
+  /* background: yellow;  */
 }
 
 .sh-container > h1 { 
@@ -12,4 +13,12 @@
   margin: 0 auto; 
   width: 100%;
   min-width: 200px;
+}
+
+.content { 
+  text-align: center; 
+  max-width: 70%; 
+  min-width: 60%; 
+  margin: 0 auto; 
+  margin-top: 2rem; 
 }
