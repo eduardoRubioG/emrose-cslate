@@ -1,30 +1,36 @@
 import React, { Component } from 'react'
 import './Icons.css'
-import { array } from 'prop-types';
-
 
 {/* <MyComponent somProp={['something']} /> */}
-export default class SectionHeader extends Component {
-  componentDidMount(){ 
-    this.props.icons.forEach(e => {
-      console.log(e);
+export default class SectionHeader extends Component {  
+  constructor(props) { 
+    super(props); 
+    let _data = []; 
+    props.icons.forEach((e, i) => {
+      const obj = { 
+        icon: e, 
+        iconColors: props.iconColors[i],
+        iconSizes: `md-${props.iconSizes[i]}`
+      }; 
+      _data.push(obj); 
     });
-  }
-
-  render() { 
-    let id = 0; 
-    const iconList = this.props.icons.map((e) => { 
+    const iconList = _data.map((e, i) => { 
+      console.log(e, "here"); 
+      const _class = `material-icons ${e.iconSizes} ${e.iconColors} icon`
+      console.log(_class, "Will this work?")
       return(
-      <li key={id}>
-        <i className="material-icons">{e}</i>
+      <li key={i}>
+        <i className={_class}>{e.icon}</i>
       </li>
       );
     })
-    id++; 
-
+    this.state = {iconData: iconList}; 
+  }
+  
+  render() { 
     return (
-      <div>
-        {iconList}
+      <div className="icon-container">
+        {this.state.iconData}
       </div>
     )
   };

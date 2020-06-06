@@ -10,16 +10,21 @@ import Icons from "../components/Icons/Icons"
 const IndexPage = () => (
     <Layout>
       <SEO title="Home" />
-          <Hero/>
-          <SectionHeader 
-              title="Welcome to my page!"
-              content="Sit culpa proident fugiat tempor reprehenderit officia id velit."
-          />
+        <Hero/>
+        <SectionHeader 
+            title="Welcome to my page!"
+            content="Sit culpa proident fugiat tempor reprehenderit officia id velit."
+        />
         <Icons 
-            icons={['face','camera','face']}
-            iconColors={['blue','red','yellow']}
-            iconSizes={['36','36','36']}
-        />   
+            icons={['camera_alt','camera_alt','camera_alt']}
+            iconColors={['primary','secondary','highlight']}
+            iconSizes={['48','48','48']}
+        />
+        <SectionHeader title="Check out some collections" />
+        <SectionHeader title="Want to see more?" />
+        <SectionHeader title="Journal" />
+        <SectionHeader title="Lets connect" />
+
     </Layout>
 );
 
