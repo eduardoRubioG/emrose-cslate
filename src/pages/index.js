@@ -13,9 +13,13 @@ const IndexPage = () => (
           <Hero/>
           <SectionHeader 
               title="Welcome to my page!"
-              content="Hello world here is the section header hehe"
+              content="Sit culpa proident fugiat tempor reprehenderit officia id velit."
           />
-        <Icons icons={['a','b','hotdog']}/>   
+        <Icons 
+            icons={['face','camera','face']}
+            iconColors={['blue','red','yellow']}
+            iconSizes={['36','36','36']}
+        />   
     </Layout>
 );
 
