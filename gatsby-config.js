@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Emma Rose Photography Website`,
@@ -26,6 +30,13 @@ module.exports = {
         display: `minimal-ui`,
         // icon: `/src/images/gatsby-icon.png/`
         //icon: `src/images/logo.svg/`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.CONTENT_DELIVERY_API,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
