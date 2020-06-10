@@ -20,11 +20,12 @@ const IndexPage = () => (
             iconColors={['primary','secondary','highlight']}
             iconSizes={['48','48','48']}
         />
-        <SectionHeader title="Check out some collections" />
+        <SectionHeader title="Check out collections" />
+            {/* <GalleryHeader title="Weddings" /> */}
+
         <SectionHeader title="Want to see more?" />
         <SectionHeader title="Journal" />
         <SectionHeader title="Lets connect" />
-
     </Layout>
 );
 

@@ -30,16 +30,16 @@ html {
   border-bottom: 1px solid var(--primary) !important;
 }
 
-.navbar-dark .navbar-nav .nav-link{
+.navbar-dark .navbar-nav .nav-link {
   color: var(--primary);
-  
+  text-transform: uppercase;
 }
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:hover .nav-link {
     color:var(--primary);
 }
 
-.navbar-nav > li{
+.navbar-nav > li {
   padding-left:15px;
   padding-right:15px;
 }
