@@ -1,0 +1,42 @@
+.bd { 
+  border: 3px solid red; 
+}
+
+.gallery-header__container { 
+  width: 80%; 
+  margin: 0 auto; 
+  margin-bottom: 3rem; 
+}
+
+.gallery-header__container + .gallery-header__container { 
+  margin-top: 1rem; 
+}
+
+.gallery-header__title {  
+  text-align: center;
+  padding-bottom: .5rem;
+}
+
+.gallery-header__cover-image { 
+  width: 100%; 
+}
+
+@media (min-width: 620px) { 
+  .gallery-header__container { 
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gallery-header__title { 
+    width: 40%; 
+    align-self: center;
+  }
+
+  .gallery-header__title > h3 { 
+    font-size: 2rem;
+  }
+
+  .gallery-header__cover-image { 
+    width: 50%;
+  }
+}

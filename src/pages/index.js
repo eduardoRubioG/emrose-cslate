@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
 import SectionHeader from "../components/SectionHeader/SectionHeader"
+import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
 import Icons from "../components/Icons/Icons"
 
 const IndexPage = () => (
@@ -21,9 +22,7 @@ const IndexPage = () => (
             iconSizes={['48','48','48']}
         />
         <SectionHeader title="Check out collections" />
-            {/* <GalleryHeader title="Weddings" /> */}
-
-        <SectionHeader title="Want to see more?" />
+            <GalleryHeader title="Weddings" />
         <SectionHeader title="Journal" />
         <SectionHeader title="Lets connect" />
     </Layout>
