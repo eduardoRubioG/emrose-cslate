@@ -22,7 +22,7 @@ const IndexPage = () => (
             iconSizes={['48','48','48']}
         />
         <SectionHeader title="Check out collections" />
-            <GalleryHeader title="Weddings" />
+            {/* <GalleryHeader title="Weddings" /> */}
         <SectionHeader title="Journal" />
         <SectionHeader title="Lets connect" />
     </Layout>
