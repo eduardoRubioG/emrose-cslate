@@ -4,46 +4,34 @@ import { graphql } from 'gatsby'
 import { useStaticQuery } from 'gatsby';
 import Img from "gatsby-image"
 
-const GalleryHeader = (props) =>  {
-
-  const data = useStaticQuery(graphql`
-    query { 
-      allContentfulGallery(filter: {title: {eq: "Weddings"}}) {
-        edges {
-          node {
-            title
-            coverImage {
-              fluid {
-                base64 
-                aspectRatio 
-                src 
-                srcSet 
-                sizes 
-              }
-            }
-          }
-        }
-      }
+export default class GalleryHeader extends Component {
+  constructor(props){ 
+    super(props); 
+    console.log(props.image); 
+    this.state = { 
+      _title: props.title,
+      _image: props.image,
     }
-  `)
-
-  const title = data.allContentfulGallery.edges[0].node.title; 
-  const image = data.allContentfulGallery.edges[0].node.coverImage.fluid; 
-
-  return (
-    <div className="gallery-header__container">
-      <div className="gallery-header__title">
-        <h3>{title}</h3>
+  }
+  render() {
+    return (
+      <div className="gallery-header__container">
+        {this.state._title}
+        {this.state._image}
       </div>
-        <Img
-          className="gallery-header__cover-image"
-          fluid={image}
-          alt="Cover image for the Weddings header"
-        />
-    </div>
-  )
+    )
+  }
 }
 
-export default GalleryHeader 
+
+// const GalleryHeader = (props) => {
+//   return (
+//     <div className="gallery-header__container">
+//     {props.title}
+//     {props.thedata.coverImage.fluid}
+//   </div>
+//   )
+// }
+
 
 

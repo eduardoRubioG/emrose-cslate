@@ -8,7 +8,7 @@ import SectionHeader from "../components/SectionHeader/SectionHeader"
 import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
 import Icons from "../components/Icons/Icons"
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
     <Layout>
       <SEO title="Home" />
         <Hero/>
@@ -22,10 +22,35 @@ const IndexPage = () => (
             iconSizes={['48','48','48']}
         />
         <SectionHeader title="Check out collections" />
-            <GalleryHeader title="Weddings" />
+            <GalleryHeader 
+                title={data.allContentfulGallery.edges[0].node.title}
+                image={data.allContentfulGallery.edges[0].node.coverImage.fluid}
+                // thedata={data.allContentfulGallery.edges[0].node}
+            />
         <SectionHeader title="Journal" />
         <SectionHeader title="Lets connect" />
     </Layout>
 );
+
+export const query = graphql`
+query { 
+  allContentfulGallery(filter: {title: {eq: "Weddings"}}) {
+    edges {
+      node {
+        title
+        coverImage {
+          fluid {
+            base64 
+            aspectRatio 
+            src 
+            srcSet 
+            sizes 
+          }
+        }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
