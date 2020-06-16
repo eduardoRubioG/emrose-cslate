@@ -24,8 +24,11 @@ const IndexPage = ({data}) => (
         <SectionHeader title="Check out collections" />
             <GalleryHeader 
                 title={data.allContentfulGallery.edges[0].node.title}
-                image={data.allContentfulGallery.edges[0].node.coverImage.fluid}
-                // thedata={data.allContentfulGallery.edges[0].node}
+                {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
+            />
+            <GalleryHeader 
+                title={data.allContentfulGallery.edges[0].node.title}
+                {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
             />
         <SectionHeader title="Journal" />
         <SectionHeader title="Lets connect" />
@@ -45,6 +48,7 @@ query {
             src 
             srcSet 
             sizes 
+            tracedSVG
           }
         }
       }

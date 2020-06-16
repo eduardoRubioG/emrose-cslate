@@ -27,6 +27,10 @@
     justify-content: space-between;
   }
 
+  .gallery-header__container + .gallery-header__container { 
+    flex-direction: row-reverse;
+  }
+
   .gallery-header__title { 
     width: 40%; 
     align-self: center;

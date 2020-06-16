@@ -7,31 +7,31 @@ import Img from "gatsby-image"
 export default class GalleryHeader extends Component {
   constructor(props){ 
     super(props); 
-    console.log(props.image); 
+    const image = { 
+      'base64': props.base64, 
+      'src': props.src, 
+      'aspectRatio': props.aspectRatio, 
+      'srcSet': props.srcSet, 
+      'sizes': props.sizes, 
+      'tracedSVG': props.tracedSVG, 
+    }
     this.state = { 
       _title: props.title,
-      _image: props.image,
+      _image: image,
     }
   }
   render() {
     return (
       <div className="gallery-header__container">
-        {this.state._title}
-        {this.state._image}
+      <div className="gallery-header__title">
+        <h3>{this.state._title}</h3>
       </div>
+        <Img
+          className="gallery-header__cover-image"
+          fluid={this.state._image}
+          alt="Cover image for the Weddings header"
+        />
+    </div>
     )
   }
 }
-
-
-// const GalleryHeader = (props) => {
-//   return (
-//     <div className="gallery-header__container">
-//     {props.title}
-//     {props.thedata.coverImage.fluid}
-//   </div>
-//   )
-// }
-
-
-
