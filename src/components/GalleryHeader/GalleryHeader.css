@@ -27,7 +27,7 @@
     justify-content: space-between;
   }
 
-  .gallery-header__container + .gallery-header__container { 
+  .left {
     flex-direction: row-reverse;
   }
 

@@ -23,10 +23,12 @@ const IndexPage = ({data}) => (
         />
         <SectionHeader title="Check out collections" />
             <GalleryHeader 
+                align={'right'}
                 title={data.allContentfulGallery.edges[0].node.title}
                 {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
             />
             <GalleryHeader 
+                align={'left'}
                 title={data.allContentfulGallery.edges[0].node.title}
                 {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
             />
