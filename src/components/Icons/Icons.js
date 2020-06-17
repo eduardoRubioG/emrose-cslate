@@ -15,9 +15,7 @@ export default class SectionHeader extends Component {
       _data.push(obj); 
     });
     const iconList = _data.map((e, i) => { 
-      console.log(e, "here"); 
       const _class = `material-icons ${e.iconSizes} ${e.iconColors} icon`
-      console.log(_class, "Will this work?")
       return(
       <li key={i}>
         <i className={_class}>{e.icon}</i>

@@ -15,13 +15,11 @@ export default class GalleryHeader extends Component {
       'sizes': props.sizes, 
       'tracedSVG': props.tracedSVG, 
     }
-    console.log(props.align, "PROP"); 
     this.state = { 
       _title: props.title,
       _image: image,
       containerClass: 'gallery-header__container ' + props.align, 
     }
-    console.log(this.state.containerClass, "ALIGNMENT CLASS"); 
   }
   render() {
     return (
