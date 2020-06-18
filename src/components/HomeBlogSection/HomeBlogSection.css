@@ -1,0 +1,5 @@
+@media (min-width: 620px) {
+  .home-blog-section__container { 
+    display: flex;
+  }
+}

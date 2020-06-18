@@ -1,0 +1,43 @@
+.blog-header__container { 
+  width: 80%; 
+  margin: 0 auto; 
+  margin-bottom: 3rem;
+  padding: 1.25rem;
+}
+
+.blog-header__title { 
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.blog-header__content { 
+  padding: 1rem;
+}
+
+.blog-header__bar-container { 
+  display: flex;
+  justify-content: center; 
+  min-height: 2rem;
+}
+
+.align-center { 
+  text-align: center; 
+}
+
+.blog-header__bar {
+  background: #F0EAD6;
+  height: 4px;
+  width: 10%;
+  min-width: 75px;
+  align-self: center;
+}
+
+.blog-icon { 
+  max-width: 48px;
+}
+
+.bd { 
+  border: 1px solid red; 
+}
