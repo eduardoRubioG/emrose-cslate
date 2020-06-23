@@ -1,15 +1,13 @@
 .blog-header__container { 
-  width: 80%; 
+  width: 100%; 
   margin: 0 auto; 
   margin-bottom: 3rem;
-  padding: 1.25rem;
 }
 
 .blog-header__title { 
   text-align: center;
   font-size: 1.5rem;
-  margin: 1rem;
-  margin-bottom: 0;
+  padding-top: 0.5rem;
 }
 
 .blog-header__content { 
@@ -20,6 +18,7 @@
   display: flex;
   justify-content: center; 
   min-height: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .align-center { 
@@ -38,6 +37,8 @@
   max-width: 48px;
 }
 
-.bd { 
-  border: 1px solid red; 
+@media (min-width: 620px) {
+  .blog-header__container + .blog-header__container { 
+    margin-left: 1.5rem;
+  }
 }

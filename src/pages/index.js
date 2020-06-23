@@ -36,9 +36,7 @@ const IndexPage = ({data}) => (
 
 
         <SectionHeader title="Journal" />
-        <section className="blog-header-section__main">
-            <HomeBlogSection /> 
-        </section>
+        <HomeBlogSection /> 
 
         <SectionHeader title="Lets connect" />
     </Layout>
