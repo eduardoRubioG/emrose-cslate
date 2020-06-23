@@ -1,0 +1,44 @@
+.blog-header__container { 
+  width: 100%; 
+  margin: 0 auto; 
+  margin-bottom: 3rem;
+}
+
+.blog-header__title { 
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.blog-header__content { 
+  padding: 1rem;
+}
+
+.blog-header__bar-container { 
+  display: flex;
+  justify-content: center; 
+  min-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.align-center { 
+  text-align: center; 
+}
+
+.blog-header__bar {
+  background: #F0EAD6;
+  height: 4px;
+  width: 10%;
+  min-width: 75px;
+  align-self: center;
+}
+
+.blog-icon { 
+  max-width: 48px;
+}
+
+@media (min-width: 620px) {
+  .blog-header__container + .blog-header__container { 
+    margin-left: 1.5rem;
+  }
+}

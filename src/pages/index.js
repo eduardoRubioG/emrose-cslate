@@ -6,6 +6,7 @@ import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
 import SectionHeader from "../components/SectionHeader/SectionHeader"
 import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
+import HomeBlogSection from "../components/HomeBlogSection/HomeBlogSection"
 import Icons from "../components/Icons/Icons"
 
 const IndexPage = ({data}) => (
@@ -32,7 +33,11 @@ const IndexPage = ({data}) => (
                 title={data.allContentfulGallery.edges[0].node.title}
                 {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
             />
+
+
         <SectionHeader title="Journal" />
+        <HomeBlogSection /> 
+
         <SectionHeader title="Lets connect" />
     </Layout>
 );
