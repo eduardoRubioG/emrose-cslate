@@ -31,6 +31,7 @@
   width: 10%;
   min-width: 75px;
   align-self: center;
+  border-radius: 25px; 
 }
 
 .blog-icon { 

@@ -1,0 +1,82 @@
+.ContactSection__container { 
+  width: 80%; 
+  margin: 0 auto; 
+  display: grid; 
+}
+
+.ContactSection__content { 
+  text-align: center; 
+}
+
+.ContactSection__contact-info { 
+  margin-top: 20px; 
+}
+
+.ContactSection__info-stub > p { 
+  margin-left: 5px;
+  color: var(--highlight); 
+}
+
+.ContactSection__info-stub { 
+  height: 2rem;
+  display: flex;  
+  justify-content: center;
+  align-content: center;
+}
+
+.ContactSection__socials { 
+  display: flex;
+  justify-content: center;
+}
+
+.ContactSection__socials > .fa { 
+  color: var(--highlight);
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.fa + .fa { 
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 800px) { 
+
+  .ContactSection__container { 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 2fr; 
+  }
+
+  .ContactSection__form-wrapper { 
+    grid-column: 1/2; 
+    grid-row: 1/3;
+  }
+
+  .ContactSection__content,
+  .ContactSection__socials,
+  .ContactSection__info-stub { 
+    width: 70%; 
+    margin: 0 auto; 
+    text-align: left; 
+    justify-content: left; 
+  }
+
+  .ContactSection__content { 
+    grid-column: 2/3; 
+    grid-row: 1/2; 
+    margin-bottom: 0; 
+  }
+
+  .ContactSection__contact-info { 
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: 0; 
+    align-self: start;
+    height: 100%;
+  }
+
+  .ContactSection__socials > .fa-facebook { 
+    padding-left: 0; 
+  }
+}

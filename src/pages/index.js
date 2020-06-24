@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import SectionHeader from "../components/SectionHeader/SectionHeader"
 import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
 import HomeBlogSection from "../components/HomeBlogSection/HomeBlogSection"
+import Forms from "../components/Form/Form"
+import ContactSection from "../components/ContactSection/ContactSection"
 import Icons from "../components/Icons/Icons"
 
 const IndexPage = ({data}) => (
@@ -39,6 +41,8 @@ const IndexPage = ({data}) => (
         <HomeBlogSection /> 
 
         <SectionHeader title="Lets connect" />
+        {/* <Forms /> */}
+        <ContactSection /> 
     </Layout>
 );
 
