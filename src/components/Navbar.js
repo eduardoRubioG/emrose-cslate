@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'gatsby'
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 import Logo from '../images/gatsby-icon.png'
 
 export default class Navbar extends Component {
@@ -10,27 +11,32 @@ export default class Navbar extends Component {
       {
         id:1,
         path:'/',
-        text: 'home'
+        text: 'home',
+        scroller: true, 
       },
       {
         id:2,
         path:'/about',
-        text: 'about'
+        text: 'about', 
+        scroller: true, 
       },
       {
         id:3,
         path:'/portfolio',
-        text: 'portfolio'
+        text: 'portfolio', 
+        scroller: false, 
       },
       {
         id: 4,
         path: '/journal',
-        text: 'journal'
+        text: 'journal',
+        scroller: false, 
       },
       {
         id:5,
         path:'/contact',
-        text: 'contact me'
+        text: 'contact me', 
+        scroller: true, 
       },
     ],
   }
@@ -55,13 +61,30 @@ export default class Navbar extends Component {
         <div className={this.state.navcollapse}>
           <ul className="navbar-nav mx-auto">{
             this.state.links.map(links=>{
-              return(
-                <li key={links.id} className="nav-item">
+                if( links.scroller ){
+                  return(
+                  <li key={links.id} className="nav-item">
+                    <ScrollLink
+                      activeClass=""
+                      to="section__contact-me"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                    >
+                      {links.text}
+                    </ScrollLink>
+                  </li>
+                  )
+                } else {
+                  return(
+                  <li key={links.id} className="nav-item">
                   <Link to={links.path} className="nav-link">
                     {links.text}
                   </Link> 
                 </li>
-              )
+                  )
+                }
             })
           }</ul>
         </div>
