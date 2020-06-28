@@ -4,7 +4,6 @@ import { Link as ScrollLink } from 'react-scroll'
 import "./Nav.scss"
 
 const  MyNav = () => {
-
   const toggleClass = (element, stringClass) => {
 		if(element.classList.contains(stringClass))
 			element.classList.remove(stringClass);
@@ -14,11 +13,12 @@ const  MyNav = () => {
 
   useEffect(() => {
 		const body = document.querySelector('body');
-		const menu = document.querySelector('.menu-icon');
-    menu.addEventListener('click', () => toggleClass(body, 'nav-active'));
+    const menu = document.querySelector('.menu-icon');
+    menu.addEventListener('click', () => {
+      toggleClass(body, 'nav-active');
+    });
   },[]);
   
-
   console.log("this is being loaded"); 
   return (
     <>
@@ -30,7 +30,7 @@ const  MyNav = () => {
 
     <div class="nav">
       <div class="nav__content">
-        <ul class="nav__list">
+        <ul class="nav__list bd">
           <li class="nav__list-item">Home</li>
           <li class="nav__list-item">About</li>
           <li class="nav__list-item">Portfolio</li>
@@ -42,5 +42,4 @@ const  MyNav = () => {
     </>
   )
 }
-
 export default MyNav; 

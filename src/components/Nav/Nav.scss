@@ -9,8 +9,8 @@ $transition--length: .8;
 	width: $size;
 	position: fixed;
 	z-index:2;
-	left: 50px;
-	top: 30px;
+	right: 5%;
+	top: 3%;
 	cursor: pointer;
 	&__line{
 		height: 2px;
@@ -127,6 +127,26 @@ body.nav-active{
 					transition-delay: $transition--length * $i / 8 + .5 + s;
 				}
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 620px) { 
+	.nav { 
+		&__list-item { 
+			display: flex; 
+			flex-direction: column;
+			padding: 2.25rem;
+			&:before { 
+				content: "";
+				display: none; 
+			}
+			&:hover { 
+				&:before {
+					display: none; 
+				}
+			}
+
 		}
 	}
 }
