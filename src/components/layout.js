@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Navbar from "./Navbar"
 import Footer from "../components/Footer/Footer"
-import MyNav from "./MyNav/MyNav"
+import Nav from "./Nav/Nav"
 import { useStaticQuery, graphql } from "gatsby"
 import "./bootstrap.min.css"
 import "./layout.css"
@@ -17,7 +17,7 @@ import "./layout.css"
 
 const Layout = ({ children }) => 
   <>
-    <MyNav/>
+    <Nav/>
     {children}
     <Footer/>
   </>;
