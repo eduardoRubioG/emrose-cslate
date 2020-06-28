@@ -1,92 +1,45 @@
 import React, { useEffect } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { Link as ScrollLink } from 'react-scroll' 
-import "./Nav.css"
+import "./Nav.scss"
 
 const  MyNav = () => {
-
-  function closeMobileMenu() {
-    const navLinks = document.querySelector(".navbar__items"); 
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    console.log(width); 
-    if( width < 620 ) { navLinks.classList.toggle("open"); }
-  }
-
-  function toggleScrollAbility() { 
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if( width < 620 ) {
-    const body = document.querySelector("body"); 
-    const html = document.querySelector("html"); 
-    body.classList.toggle("no-scroll");
-    html.classList.toggle("no-scroll");
-    }
-  }
+  const toggleClass = (element, stringClass) => {
+		if(element.classList.contains(stringClass))
+			element.classList.remove(stringClass);
+		else
+			element.classList.add(stringClass);
+	}
 
   useEffect(() => {
-    const hamburger = document.querySelector(".navbar__hamburger"); 
-    const navLinks = document.querySelector(".navbar__items"); 
-    const links = document.querySelectorAll(".navbar__items li");
-    hamburger.addEventListener("click", () => { 
-      navLinks.classList.toggle("open");
-      navLinks.classList.toggle("display"); 
-      toggleScrollAbility(); 
+		const body = document.querySelector('body');
+    const menu = document.querySelector('.menu-icon');
+    menu.addEventListener('click', () => {
+      toggleClass(body, 'nav-active');
     });
   },[]);
   
- 
-
   console.log("this is being loaded"); 
   return (
-    <nav className="_navbar">
-      <div className="navbar__hamburger">
-        <div className="navbar__hamburger-line"/>
-        <div className="navbar__hamburger-line"/>
-        <div className="navbar__hamburger-line"/>
-      </div> 
-      <ul className="navbar__items.display">
-        <li>
-        <ScrollLink
-          to="section__home"
-          spy={false}
-          smooth={true}
-          offset={0}
-          duration={500}
-          onClick={()=>{
-              closeMobileMenu();
-              toggleScrollAbility(); 
-            }}
-        >
-          home
-        </ScrollLink>
-        </li>
-        <GatsbyLink to="/about" className="navbar__gatsby-link">
-          <li>about</li>
-        </GatsbyLink>
-        <GatsbyLink to="/portfolio" className="navbar__gatsby-link">
-          <li>portfolio</li>
-        </GatsbyLink>
-        <GatsbyLink to="/journal" className="navbar__gatsby-link">
-          <li>journal</li>
-        </GatsbyLink>
-        <li>
-          <ScrollLink
-            activeClass="active"
-            to="section__contact-me"
-            spy={false}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={()=>{
-              closeMobileMenu();
-              toggleScrollAbility(); 
-            }}
-          >
-            contact
-          </ScrollLink>
-        </li>
-      </ul> 
-    </nav>
+    <>
+      <div class="menu-icon">
+      <span class="menu-icon__line menu-icon__line-left"></span>
+      <span class="menu-icon__line"></span>
+      <span class="menu-icon__line menu-icon__line-right"></span>
+    </div>
+
+    <div class="nav">
+      <div class="nav__content">
+        <ul class="nav__list bd">
+          <li class="nav__list-item">Home</li>
+          <li class="nav__list-item">About</li>
+          <li class="nav__list-item">Portfolio</li>
+          <li class="nav__list-item">Journal</li>
+          <li class="nav__list-item">Contact</li>
+        </ul>
+      </div>
+    </div>
+    </>
   )
 }
-
 export default MyNav; 
