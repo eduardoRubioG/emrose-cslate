@@ -28,6 +28,7 @@ const  MyNav = () => {
     const links = document.querySelectorAll(".navbar__items li");
     hamburger.addEventListener("click", () => { 
       navLinks.classList.toggle("open");
+      navLinks.classList.toggle("display"); 
       toggleScrollAbility(); 
     });
   },[]);
@@ -42,7 +43,7 @@ const  MyNav = () => {
         <div className="navbar__hamburger-line"/>
         <div className="navbar__hamburger-line"/>
       </div> 
-      <ul className="navbar__items">
+      <ul className="navbar__items.display">
         <li>
         <ScrollLink
           to="section__home"

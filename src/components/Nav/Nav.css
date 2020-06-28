@@ -86,6 +86,10 @@
     transition: all 0.75s ease-out; 
   }
 
+  .navbar__items.display { 
+    display: none; 
+  }
+
   .navbar__items.open { 
     clip-path: circle(1250px at 95% 5%);
     -webkit-clip-path: circle(1250px at 95% 5%);
