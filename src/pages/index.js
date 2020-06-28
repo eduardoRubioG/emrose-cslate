@@ -14,6 +14,7 @@ import Icons from "../components/Icons/Icons"
 const IndexPage = ({data}) => (
     <Layout>
       <SEO title="Home" />
+      <div id="section__home"/>
         <Hero/>
         <SectionHeader 
             title="Welcome to my page!"
@@ -39,8 +40,8 @@ const IndexPage = ({data}) => (
 
         <SectionHeader title="Journal" />
         <HomeBlogSection /> 
-
-        <SectionHeader title="Lets connect" />
+        <div id="section__contact-me"/>
+        <SectionHeader title="Lets connect"/>
         {/* <Forms /> */}
         <ContactSection /> 
     </Layout>

@@ -7,6 +7,8 @@
   --primary: #F0EAD6;
   --secondary: #F7BCBB;
   --highlight: #D3827F;
+  --nav-size: 57px; 
+  --speed: 500ms; 
 }
 
 body {
@@ -14,7 +16,7 @@ body {
   color: var(--primary);
   font-family: 'Poppins', sans-serif !important;
   /* overflow: hidden; */
-  padding-top: 57px;
+  /* padding-top: 57px; */
 }
 
 html {
