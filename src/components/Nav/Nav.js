@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { Link as ScrollLink } from 'react-scroll' 
-import "./MyNav.css"
+import "./Nav.css"
 
 const  MyNav = () => {
 
