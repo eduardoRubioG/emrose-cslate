@@ -10,6 +10,11 @@ const  MyNav = () => {
 		else
 			element.classList.add(stringClass);
   }
+
+  const closeMenu = () => { 
+    console.log("closing the menu")
+    toggleClass(document.querySelector('body'), 'nav-active'); 
+  }
   
   useEffect(() => {
 		const body = document.querySelector('body');
@@ -37,25 +42,21 @@ const  MyNav = () => {
             smooth={true}
             offset={0}
             duration={500}
-            onClick={() => { 
-              toggleClass(document.querySelector('body'),'nav-active');
-            }}
+            onClick={() => {closeMenu()}}
           >
             Home
           </ScrollLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='/about'>About</GatsbyLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='portfolio'>Portfolio</GatsbyLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='/journal'>Journal</GatsbyLink></li>
-          <li className="nav__list-item">
+          <li className="nav__list-item g-link"><GatsbyLink to='/about' onClick={() => {closeMenu()}}>About</GatsbyLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='portfolio' onClick={() => {closeMenu()}}>Portfolio</GatsbyLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/journal' onClick={() => {closeMenu()}}>Journal</GatsbyLink></li>
+          <li className="nav__list-item" >
           <ScrollLink
             to='section__contact-me'
             spy={true}
             smooth={true}
             offset={0}
             duration={500}
-            onClick={() => { 
-              toggleClass(document.querySelector('body'),'nav-active');
-            }}
+            onClick={() => {closeMenu(); }}
           >
             Contact
           </ScrollLink></li>
