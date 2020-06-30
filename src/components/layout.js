@@ -16,9 +16,13 @@ import "./layout.css"
 
 const Layout = ({ children }) => 
   <>
-    <Nav/>
-    {children}
-    <Footer/>
+    <div class="sub-body">
+      <Nav/>
+      <main>
+        {children}
+      </main>
+      <Footer id="layout__footer"/>
+    </div>
   </>;
 
 Layout.propTypes = {
