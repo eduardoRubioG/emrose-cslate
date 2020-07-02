@@ -16,7 +16,7 @@ import "./layout.css"
 
 const Layout = ({ children }) => 
   <>
-    <div class="sub-body">
+    <div className="sub-body">
       <Nav/>
       <main>
         {children}

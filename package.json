@@ -6,6 +6,8 @@
   "author": "Eduardo Rubio <eduardo.rubio.jr85@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "bootstrap": "^4.5.0",
     "gatsby": "^2.19.28",
     "gatsby-image": "^2.2.42",
     "gatsby-plugin-manifest": "^2.4.11",
@@ -13,15 +15,18 @@
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sass": "^2.3.6",
     "gatsby-plugin-sharp": "^2.6.11",
+    "gatsby-plugin-styled-components": "^3.3.6",
     "gatsby-source-contentful": "^2.3.15",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.5.5",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
-    "react-scroll": "^1.7.16"
+    "react-scroll": "^1.7.16",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
