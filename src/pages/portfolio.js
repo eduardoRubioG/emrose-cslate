@@ -1,17 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
-import Img from 'gatsby-image'
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ImageBanner from "../components/ImageBanner/ImageBanner"
 import SectionHeader from "../components/SectionHeader/SectionHeader"
 import './page-styling/portfolio.scss'
-import { red } from "color-name";
 
-const SecondPage = ({data}) => {
+const PortfolioPage = ({data}) => {
   const galleries = data.allContentfulGallery.edges; 
   const galleryCoverImages = galleries.map((gallery) => { 
-    return(<ImageBanner title={gallery.node.title} image={gallery.node.coverImage.fluid} slug={gallery.node.slug}/>)
+    return(<ImageBanner key={gallery.node.title} title={gallery.node.title} image={gallery.node.coverImage.fluid} slug={gallery.node.slug}/>)
   })
   return(
   <Layout>
@@ -46,7 +44,4 @@ query {
   }
 }
 `
-
-
-
-export default SecondPage
+export default PortfolioPage
