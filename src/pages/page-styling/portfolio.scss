@@ -1,0 +1,16 @@
+.portfolio__section-wrapper { 
+  padding: 60px 0;
+}
+
+.portfolio__content { 
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 35px;
+}
+
+@media screen and (max-width: 600px) { 
+  .portfolio__content {
+    text-align: center;
+    width: 85%;
+  }
+}

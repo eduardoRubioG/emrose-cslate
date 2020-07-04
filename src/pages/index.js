@@ -1,13 +1,11 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Hero from "../components/Hero/Hero"
 import SEO from "../components/seo"
 import SectionHeader from "../components/SectionHeader/SectionHeader"
 import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
 import HomeBlogSection from "../components/HomeBlogSection/HomeBlogSection"
-import Forms from "../components/Form/Form"
 import ContactSection from "../components/ContactSection/ContactSection"
 import Icons from "../components/Icons/Icons"
 
