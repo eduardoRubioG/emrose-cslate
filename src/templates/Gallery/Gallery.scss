@@ -1,0 +1,21 @@
+.gallery { 
+  &__filter-container { 
+
+  }
+
+  &__filter-inactive { background: red; }
+  &__filter-active { background: green; }
+}
+
+// <button onClick={() => { 
+//   console.log(this.state, "State"); 
+// }}>Toggle On</button>
+// <button onClick={() => this.toggleAllFilters()}>Toggle Off</button>
+// {this.state.photoRenderOptions.map((photoGroup) => { 
+//   if( photoGroup.render === true) {
+//   return (
+//     <div>
+//     <h3>{photoGroup.id}</h3>
+//     <button onClick={() => this.toggleSingleFilter(photoGroup.id)}>Toggle {photoGroup.id}</button>
+//     </div>
+//   ) }})} 
