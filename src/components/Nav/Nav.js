@@ -46,9 +46,9 @@ const  MyNav = () => {
           >
             Home
           </ScrollLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='/about' onClick={() => {closeMenu()}}>About</GatsbyLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='portfolio' onClick={() => {closeMenu()}}>Portfolio</GatsbyLink></li>
-          <li className="nav__list-item g-link"><GatsbyLink to='/journal' onClick={() => {closeMenu()}}>Journal</GatsbyLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/about/' onClick={() => {closeMenu()}}>About</GatsbyLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/portfolio/' onClick={() => {closeMenu()}}>Portfolio</GatsbyLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/journal/' onClick={() => {closeMenu()}}>Journal</GatsbyLink></li>
           <li className="nav__list-item" >
           <ScrollLink
             to='section__contact-me'
