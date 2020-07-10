@@ -33,7 +33,7 @@
     z-index: 3;
     &:hover +  .image-banner__image{ 
       filter: blur(0px);
-      opacity: 100%;
+      opacity: 1;
     }
     &:hover ~ .image-banner__title { 
       opacity: 0.55;
