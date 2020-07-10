@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import SectionHeader from '../../components/SectionHeader/SectionHeader'
+import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
 import './Gallery.scss'
 class Gallery extends Component {
@@ -17,16 +19,17 @@ class Gallery extends Component {
     this.toggleAllFilters= this.toggleAllFilters.bind(this); 
     this.toggleSingleFilter = this.toggleSingleFilter.bind(this); 
     this.validateFilterGeneralization = this.validateFilterGeneralization.bind(this); 
-
     this.state = { 
+      pageTitle: pageData.title, 
       allRendered: true, 
       photoRenderOptions: photoRenderOptions, // includes ID and render 
       //      { 
-      //        id: some filter, 
-      //        render: some render option 
-      //      }
-      subGalleries: pageData.subGalleries, 
-    }
+        //        id: some filter, 
+        //        render: some render option 
+        //      }
+        subGalleries: pageData.subGalleries, 
+      }
+      console.log(this.state.pageTitle, "TITLE"); 
   }
 
   /* Toggle to make sure the show all button always works in accordance to the current state of filters */ 
@@ -59,29 +62,37 @@ class Gallery extends Component {
     /* Return only the data of the photo groups with an active filter */ 
     const tagsToRender = new Set(this.state.photoRenderOptions.filter(x => x.render).map(x => x.id));
     const imagesGroupsToRender = this.state.subGalleries.filter(img => img.filters.some(filters => tagsToRender.has(filters)))
-    console.log(imagesGroupsToRender, "PRAY"); 
 
     const images = imagesGroupsToRender.map(groups => { 
       return groups.photos.map((img) => { 
-        console.log(img.fluid); 
-        return(<Img fluid={img.fluid} />); 
+        return(
+          // <div className="gallery__image-container">
+        <Img className="gallery__image-item" fluid={img.fluid} />
+        // </div>
+        ); 
       })
     })
-
     return (
-      <div>
-        <h1>This is a gallery page</h1>
-        <div className="gallery__filter-container">
-          <button className={renderAll} onClick={() => this.toggleAllFilters()}> All </button>
-          {this.state.photoRenderOptions.map((photoGroup) => {
-            return(
-            (photoGroup.render) ? 
-            <button className='gallery__filter-active' onClick={() => this.toggleSingleFilter(photoGroup.id)}>{photoGroup.id}</button> : 
-            <button className='gallery__filter-inactive' onClick={() => this.toggleSingleFilter(photoGroup.id)}>{photoGroup.id}</button> )
-          })}
-        </div>
-          {images}
-      </div>
+      <Layout>
+        <section className="gallery__body">
+          <SectionHeader title={this.state.pageTitle}/>
+            <div className="gallery__content">
+              <div className="gallery__filter-container">
+              <h5 className="gallery__filter-header">Filters</h5>
+              <button className={renderAll} onClick={() => this.toggleAllFilters()}> All </button>
+              {this.state.photoRenderOptions.map((photoGroup) => {
+              return(
+              (photoGroup.render) ?
+              <button className='gallery__filter-active' onClick={() => this.toggleSingleFilter(photoGroup.id)}>{photoGroup.id}</button> :
+              <button className='gallery__filter-inactive' onClick={() => this.toggleSingleFilter(photoGroup.id)}>{photoGroup.id}</button> )
+              })}
+              </div>
+              <div className="gallery__images">
+              {images}
+              </div>
+            </div>
+        </section>
+      </Layout>
     )
   }
 }
