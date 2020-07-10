@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 import './Gallery.scss'
 class Gallery extends Component {
   constructor(props) { 
@@ -12,7 +13,7 @@ class Gallery extends Component {
     /* Handle all the data parsing */
     const pageData = props.data.allContentfulGallery.edges[0].node; 
     const filtersMulti = pageData.subGalleries.map((subgallery) => { return subgallery.filters })
-    const filtersFlattened = filtersMulti.flat(Infinity);
+    const filtersFlattened = _.flattenDeep(filtersMulti);
     const photoRenderOptions = filtersFlattened.map(f => { return ({id: f, render: true, })}); 
 
     /* Handling the binding for functions */ 
