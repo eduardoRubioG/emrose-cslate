@@ -83,7 +83,7 @@ $transition--length: .8;
 			height: 1px;
 			top: 100%;
 			transform: translate(0%, 0%);
-			transition: all .3s ease;
+			transition: transform .3s ease, width .3s ease;
 			z-index: -1;
 		}
 		&:hover{
@@ -92,12 +92,17 @@ $transition--length: .8;
 			}
 		}
 	}
+
+	& a,
+	a:hover { 
+		color: var(--mainbg); 
+		text-decoration: none;
+	}
 }
 
 //active state
-body.nav-active{
-	$menu--items--count: 5;
-	.menu-icon{
+.menu-icon-active { 
+	.menu-icon {
 		&__line{
 			background-color: var(--mainbg);
 			transform: translateX(0px) rotate(-45deg);
@@ -109,8 +114,13 @@ body.nav-active{
 			transform: translateX(-2px) rotate(45deg);
 		}
 	}
-	.nav{
-		visibility:visible;
+}
+
+.nav-active { 
+	.nav {
+	$menu--items--count: 5;
+	visibility: visible;
+	overflow-y: hidden;
 		&:before,&:after{
 			transform: translateX(0%) translateY(0%);
 		}
@@ -133,16 +143,7 @@ body.nav-active{
 	}
 }
 
-.g-link > a {
-	text-decoration: none; 
-	color: var(--mainbg);
-	&:hover { 
-		text-decoration: none;
-		color: var(--mainbg);
-	}
-}
-
-@media screen and (max-width: 620px) { 
+@media screen and (max-width: 690px) { 
 	.nav { 
 		&__list-item { 
 			display: flex; 
