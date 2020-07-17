@@ -83,7 +83,7 @@ $transition--length: .8;
 			height: 1px;
 			top: 100%;
 			transform: translate(0%, 0%);
-			transition: transform .3s ease, width .3s ease;
+			transition: all .3s ease;
 			z-index: -1;
 		}
 		&:hover{
@@ -92,17 +92,12 @@ $transition--length: .8;
 			}
 		}
 	}
-
-	& a,
-	a:hover { 
-		color: var(--mainbg); 
-		text-decoration: none;
-	}
 }
 
 //active state
-.menu-icon-active { 
-	.menu-icon {
+body.nav-active{
+	$menu--items--count: 5;
+	.menu-icon{
 		&__line{
 			background-color: var(--mainbg);
 			transform: translateX(0px) rotate(-45deg);
@@ -114,13 +109,8 @@ $transition--length: .8;
 			transform: translateX(-2px) rotate(45deg);
 		}
 	}
-}
-
-.nav-active { 
-	.nav {
-	$menu--items--count: 5;
-	visibility: visible;
-	overflow-y: hidden;
+	.nav{
+		visibility:visible;
 		&:before,&:after{
 			transform: translateX(0%) translateY(0%);
 		}
@@ -143,7 +133,16 @@ $transition--length: .8;
 	}
 }
 
-@media screen and (max-width: 690px) { 
+.g-link > a {
+	text-decoration: none; 
+	color: var(--mainbg);
+	&:hover { 
+		text-decoration: none;
+		color: var(--mainbg);
+	}
+}
+
+@media screen and (max-width: 620px) { 
 	.nav { 
 		&__list-item { 
 			display: flex; 
