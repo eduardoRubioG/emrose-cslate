@@ -24,7 +24,6 @@ const  MyNav = () => {
     });
   },[]);
 
-  console.log("this is being loaded"); 
   return (
     <>
       <div className="menu-icon">
@@ -35,31 +34,11 @@ const  MyNav = () => {
     <div className="nav">
       <div className="nav__content">
         <ul className="nav__list">
-          <li className="nav__list-item">
-          <ScrollLink
-            to='section__home'
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={() => {closeMenu()}}
-          >
-            Home
-          </ScrollLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/' onClick={() => {closeMenu()}}>Home</GatsbyLink></li>
           <li className="nav__list-item g-link"><GatsbyLink to='/about/' onClick={() => {closeMenu()}}>About</GatsbyLink></li>
           <li className="nav__list-item g-link"><GatsbyLink to='/portfolio/' onClick={() => {closeMenu()}}>Portfolio</GatsbyLink></li>
           <li className="nav__list-item g-link"><GatsbyLink to='/journal/' onClick={() => {closeMenu()}}>Journal</GatsbyLink></li>
-          <li className="nav__list-item" >
-          <ScrollLink
-            to='section__contact-me'
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-            onClick={() => {closeMenu(); }}
-          >
-            Contact
-          </ScrollLink></li>
+          <li className="nav__list-item g-link"><GatsbyLink to='/contact/' onClick={() => {closeMenu()}}>Contact</GatsbyLink></li>
         </ul>
       </div>
     </div>
