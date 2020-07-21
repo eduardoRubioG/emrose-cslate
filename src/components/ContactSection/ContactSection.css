@@ -1,6 +1,7 @@
 .ContactSection__container { 
   width: 80%; 
   margin: 0 auto; 
+  margin-bottom: 2em;
   display: grid; 
 }
 

@@ -1,17 +1,21 @@
-import React from 'react'
-import BlogHeader from '../BlogHeader/BlogHeader'
-import './HomeBlogSection.css' 
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import BlogHeader from "../BlogHeader/BlogHeader"
+import SectionHeader from "../SectionHeader/SectionHeader"
+import "./HomeBlogSection.css"
+import { useStaticQuery, graphql } from "gatsby"
 
 const HomeBlogSection = () => {
   const data = useStaticQuery(graphql`
-  query {
-      allContentfulBlogPost(filter: {featuredOnHomePage: {eq: true}}, limit: 2) {
+    query {
+      allContentfulBlogPost(
+        filter: { featuredOnHomePage: { eq: true } }
+        limit: 1
+      ) {
         edges {
-            node {
+          node {
             title
-            content { 
-                json 
+            content {
+              json
             }
             coverImage {
               fluid {
@@ -26,22 +30,27 @@ const HomeBlogSection = () => {
       }
     }
   `)
-  return (
-    <div className="home-blog-section__container">
-      <BlogHeader 
-        icon="sports_tennis"
-        title={data.allContentfulBlogPost.edges[0].node.title}
-        {...data.allContentfulBlogPost.edges[0].node.coverImage.fluid}
-        content={data.allContentfulBlogPost.edges[0].node.content.json}
-      />
-      <BlogHeader 
-        icon="sports_tennis"
-        title={data.allContentfulBlogPost.edges[0].node.title}
-        {...data.allContentfulBlogPost.edges[0].node.coverImage.fluid}
-        content={data.allContentfulBlogPost.edges[0].node.content.json}
-      />
-    </div>
+  return data ? (
+    <div></div>
+  ) : (
+    <>
+      <SectionHeader title="Journal" />
+      <div className="home-blog-section__container">
+        <BlogHeader
+          icon="sports_tennis"
+          title={data.allContentfulBlogPost.edges[0].node.title}
+          {...data.allContentfulBlogPost.edges[0].node.coverImage.fluid}
+          content={data.allContentfulBlogPost.edges[0].node.content.json}
+        />
+        <BlogHeader
+          icon="sports_tennis"
+          title={data.allContentfulBlogPost.edges[0].node.title}
+          {...data.allContentfulBlogPost.edges[0].node.coverImage.fluid}
+          content={data.allContentfulBlogPost.edges[0].node.content.json}
+        />
+      </div>
+    </>
   )
 }
 
-export default HomeBlogSection;
+export default HomeBlogSection

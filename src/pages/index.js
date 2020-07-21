@@ -7,6 +7,7 @@ import SectionHeader from "../components/SectionHeader/SectionHeader"
 import GalleryHeader from "../components/GalleryHeader/GalleryHeader"
 import HomeBlogSection from "../components/HomeBlogSection/HomeBlogSection"
 import ContactSection from "../components/ContactSection/ContactSection"
+import Button from "../components/Button/Button"
 import Icons from "../components/Icons/Icons"
 
 const IndexPage = ({data}) => (
@@ -35,8 +36,8 @@ const IndexPage = ({data}) => (
                 {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
             />
 
-
-        <SectionHeader title="Journal" />
+        <Button content="Visit my full portfolio" to="/portfolio/" pos={true}></Button>
+        {/* <SectionHeader title="Journal" /> */}
         <HomeBlogSection /> 
         <div id="section__contact-me"/>
         <SectionHeader title="Lets connect"/>

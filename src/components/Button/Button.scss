@@ -1,0 +1,36 @@
+.button { 
+  color: var(--primary);
+  position: relative;
+  border: 2px solid var(--primary);
+  padding: 0.4em 1em;
+  margin: 2em;
+  &::before { 
+    content: "";
+    position: absolute;
+    background: var(--primary);
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform ease 300ms;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  &:hover { 
+    color: var(--mainbg);
+    transition: color ease 800ms;
+    text-decoration: none;
+    &::before { 
+      content: ""; 
+      transform: scaleX(1);
+      z-index: -1;
+      transform-origin: left;
+    }
+  }
+
+  &__container { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
