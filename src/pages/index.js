@@ -9,11 +9,12 @@ import HomeBlogSection from "../components/HomeBlogSection/HomeBlogSection"
 import ContactSection from "../components/ContactSection/ContactSection"
 import Button from "../components/Button/Button"
 import Icons from "../components/Icons/Icons"
+import FeaturedImageBannerLarge from "../components/FeaturedImageBannerL/FeaturedImageBannerL"
+import FeaturedImageBannerSmall from "../components/FeaturedImageBannerS/FeaturedImageBannerS"
 
 const IndexPage = ({data}) => (
     <Layout>
       <SEO title="Home" />
-      <div id="section__home"/>
         <Hero/>
         <SectionHeader 
             title="Welcome to my page!"
@@ -24,6 +25,7 @@ const IndexPage = ({data}) => (
             iconColors={['primary','secondary','highlight']}
             iconSizes={['48','48','48']}
         />
+        <FeaturedImageBannerLarge data={data.allContentfulFeaturedImageBannerLarge}/>
         <SectionHeader title="Check out collections" />
             <GalleryHeader 
                 align={'right'}
@@ -37,11 +39,9 @@ const IndexPage = ({data}) => (
             />
 
         <Button content="Visit my full portfolio" to="/portfolio/" pos={true}></Button>
-        {/* <SectionHeader title="Journal" /> */}
+        <FeaturedImageBannerSmall data={data.allContentfulFeaturedImageBannerSmall}/>
         <HomeBlogSection /> 
-        <div id="section__contact-me"/>
         <SectionHeader title="Lets connect"/>
-        {/* <Forms /> */}
         <ContactSection /> 
     </Layout>
 );
@@ -60,6 +60,33 @@ query {
             srcSet 
             sizes 
             tracedSVG
+          }
+        }
+      }
+    }
+  }
+  allContentfulFeaturedImageBannerLarge(limit: 1) {
+    edges {
+      node {
+        centerPiece {
+          fluid(cropFocus: FACES, resizingBehavior: CROP){ 
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        sideImages {
+          fluid(cropFocus: FACES, resizingBehavior: CROP){
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+  allContentfulFeaturedImageBannerSmall(limit: 1) {
+    edges {
+      node {
+        images {
+          fluid(cropFocus: FACES, resizingBehavior: CROP) {
+            ...GatsbyContentfulFluid_withWebp
           }
         }
       }
