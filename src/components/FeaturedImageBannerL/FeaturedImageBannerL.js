@@ -11,21 +11,34 @@ const FeaturedImageBannerL = props => {
   const bottomright = props.data.edges[0].node.sideImages[3].fluid
 
   return (
-    <Media queries={{ small: { maxWidth: 860 } }}>
-      {matches => matches.small ? (
-        <div className="FeaturedImageBannerL__container">
-          <Img fluid={centerPiece} className="FeaturedImageBannerL__image cp" />
-        </div>
-      ) : (
-        <div className="FeaturedImageBannerL__container">
-          <Img fluid={topleft} className="top-left" />
-          <Img fluid={bottomleft} className="bottom-left" />
-          <Img fluid={centerPiece} className="FeaturedImageBannerL__image cp" />
-          <Img fluid={topright} className="top-right" />
-          <Img fluid={bottomright} className="bottom-right" />
-        </div>
-      )}
-    </Media>
+    <>
+      <Media
+        query="(max-width: 860px)"
+        render={() => (
+          <div className="FeaturedImageBannerL__container">
+            <Img
+              fluid={centerPiece}
+              className="FeaturedImageBannerL__image cp"
+            />
+          </div>
+        )}
+      />
+      <Media
+        query="(min-width: 860px)"
+        render={() => (
+          <div className="FeaturedImageBannerL__container">
+            <Img fluid={topleft} className="top-left" />
+            <Img fluid={bottomleft} className="bottom-left" />
+            <Img
+              fluid={centerPiece}
+              className="FeaturedImageBannerL__image cp"
+            />
+            <Img fluid={topright} className="top-right" />
+            <Img fluid={bottomright} className="bottom-right" />
+          </div>
+        )}
+      />
+    </>
   )
 }
 
