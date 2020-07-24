@@ -1,5 +1,4 @@
 import React from "react"
-import Media from "react-media"
 import Img from "gatsby-image"
 import "./FeaturedImageBannerL.scss"
 
@@ -11,34 +10,17 @@ const FeaturedImageBannerL = props => {
   const bottomright = props.data.edges[0].node.sideImages[3].fluid
 
   return (
-    <>
-      <Media
-        query="(max-width: 860px)"
-        render={() => (
-          <div className="FeaturedImageBannerL__container">
-            <Img
-              fluid={centerPiece}
-              className="FeaturedImageBannerL__image cp"
-            />
-          </div>
-        )}
-      />
-      <Media
-        query="(min-width: 860px)"
-        render={() => (
           <div className="FeaturedImageBannerL__container">
             <Img fluid={topleft} className="top-left" />
             <Img fluid={bottomleft} className="bottom-left" />
             <Img
               fluid={centerPiece}
               className="FeaturedImageBannerL__image cp"
+              loading="eager"
             />
             <Img fluid={topright} className="top-right" />
             <Img fluid={bottomright} className="bottom-right" />
           </div>
-        )}
-      />
-    </>
   )
 }
 
