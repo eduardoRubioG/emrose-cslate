@@ -12,9 +12,10 @@
     bottom: 0;
     height: 100%;
     width: 100%;
-    transition: transform ease 300ms;
+    transition: transform ease 450ms;
     transform: scaleX(0);
-    transform-origin: right;
+    // transform-origin: right;
+    transform-origin: left;
   }
   &:hover { 
     color: var(--mainbg);
@@ -24,7 +25,7 @@
       content: ""; 
       transform: scaleX(1);
       z-index: -1;
-      transform-origin: left;
+      // transform-origin: left;
     }
   }
 
