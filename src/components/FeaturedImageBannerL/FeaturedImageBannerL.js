@@ -21,6 +21,7 @@ const FeaturedImageBannerL = props => {
             <Img fluid={topright} className="top-right" />
             <Img fluid={bottomright} className="bottom-right" />
           </div>
+
   )
 }
 
