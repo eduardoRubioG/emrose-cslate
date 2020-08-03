@@ -102,57 +102,71 @@ class Gallery extends Component {
 
     return (
       <>
-      <Layout>
-        <section className="gallery__body">
-          <SectionHeader title={this.state.pageTitle} />
-          <div className="gallery__content">
-            <div className="gallery__filter-container">
-              <h5 className="gallery__filter-header">Filters</h5>
-              <button
-                className={renderAll}
-                onClick={() => this.toggleAllFilters()}
-              >
-                All
-              </button>
-              {this.state.photoRenderOptions.map(photoGroup => {
-                return photoGroup.render ? (
-                  <button
-                    className="gallery__filter-active"
-                    onClick={() => this.toggleSingleFilter(photoGroup.id)}
-                    key={photoGroup.id}
-                  >
-                    {photoGroup.id}
-                  </button>
-                ) : (
-                  <button
-                    className="gallery__filter-inactive"
-                    onClick={() => this.toggleSingleFilter(photoGroup.id)}
-                  >
-                    {photoGroup.id}
-                  </button>
-                )
-              })}
+        <Layout>
+          <section className="gallery__body">
+            <SectionHeader title={this.state.pageTitle} />
+            <div className="gallery__content">
+              <div className="gallery__filter-container">
+                <h5 className="gallery__filter-header">Filters</h5>
+                <button
+                  className={renderAll}
+                  onClick={() => this.toggleAllFilters()}
+                >
+                  All
+                </button>
+                {this.state.photoRenderOptions.map(photoGroup => {
+                  return photoGroup.render ? (
+                    <button
+                      className="gallery__filter-active"
+                      onClick={() => this.toggleSingleFilter(photoGroup.id)}
+                      key={photoGroup.id}
+                    >
+                      {photoGroup.id}
+                    </button>
+                  ) : (
+                    <button
+                      className="gallery__filter-inactive"
+                      onClick={() => this.toggleSingleFilter(photoGroup.id)}
+                    >
+                      {photoGroup.id}
+                    </button>
+                  )
+                })}
+              </div>
+              <div className="gallery__images">{images}</div>
             </div>
-            <div className="gallery__images">{images}</div>
-          </div>
-        </section>
-      </Layout>
-       <Modal show={this.state.showModal} dialogClassName="gallery__modal" onHide={this.closeModal}>
-       <Modal.Header closeButton>
-       <button className="gallery__modal-button" onClick={() => {
-           modalImages[this.state.currentImageIndex-1] ? 
-           this.prevImage() : this.closeModal();
-         }}>{"<"}</button>
-         <button className="gallery__modal-button" onClick={() => {
-           modalImages[this.state.currentImageIndex+1] ? 
-           this.nextImage() : this.closeModal();
-           }}>{">"}</button>
-       </Modal.Header>
-       <Modal.Body>
-       {modalImages[this.state.currentImageIndex]}
-       </Modal.Body>
-       </Modal>
-       </>
+          </section>
+        </Layout>
+        <Modal
+          show={this.state.showModal}
+          dialogClassName="gallery__modal"
+          onHide={this.closeModal}
+        >
+          <Modal.Header closeButton>
+            <button
+              className="gallery__modal-button"
+              onClick={() => {
+                modalImages[this.state.currentImageIndex - 1]
+                  ? this.prevImage()
+                  : this.closeModal()
+              }}
+            >
+              {"<"}
+            </button>
+            <button
+              className="gallery__modal-button"
+              onClick={() => {
+                modalImages[this.state.currentImageIndex + 1]
+                  ? this.nextImage()
+                  : this.closeModal()
+              }}
+            >
+              {">"}
+            </button>
+          </Modal.Header>
+          <Modal.Body>{modalImages[this.state.currentImageIndex]}</Modal.Body>
+        </Modal>
+      </>
     )
   }
 }

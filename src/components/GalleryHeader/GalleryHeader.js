@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './GalleryHeader.css'
-import { graphql } from 'gatsby'
-import { useStaticQuery } from 'gatsby';
 import Img from "gatsby-image"
 
 export default class GalleryHeader extends Component {
