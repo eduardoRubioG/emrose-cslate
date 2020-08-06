@@ -1,6 +1,6 @@
 .footer__container { 
   background: var(--highlight); 
-  margin-top: auto;
+  margin-top: 2em;
   width: 100%;
   padding: 0.5rem 0;
   /* height: 2.75rem;  */
