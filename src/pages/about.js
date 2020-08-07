@@ -7,24 +7,32 @@ import "./page-styling/about.scss"
 
 export default function about({ data }) {
   const pageData = data.allContentfulAboutPage.edges[0].node
-  console.log("ABOUT PAGE", pageData)
+  // pageData.pageTitle
+  // pageData.description.description
+  // pageData.profileImage.fluid
+  // pageData.subImage.fluid
   return (
     <Layout>
-      <section className="about__section bd">
-        <div>
-          <SectionHeader title={pageData.pageTitle} />
+      <div className="about__header-text">
+        <h1 className="about__emma">Emma</h1>
+        <h1 className="about__rose">Rose</h1>
+      </div>
+      <section className="about__intro-grid">
+        <Img fluid={pageData.profileImage.fluid} className="about__main-img" />
+        <div class="about__intro-text">
+          <p>{pageData.description.description}</p>
+          <p>
+            {pageData.subtext
+              ? pageData.subtext
+              : "No subtext gotten from the CMS"}
+          </p>
         </div>
-        {/* Grid */}
-        <div className="about__grid-content">
-          <div className="about__desc">{pageData.description.description}</div>
-          <div className="about__img-wrapper">
-            <Img className="about__img" fluid={pageData.profileImage.fluid} />
-          </div>
-        <div className="about__contact">
-          {/* <SectionHeader title="Get in touch!" /> */}
-          <ContactSection />
-        </div>
-        </div>
+        <Img fluid={pageData.subImage.fluid} className="about__sub-img" />
+      </section>
+
+      <section className="about__contact-section">
+        <SectionHeader title="Get in touch"/>
+        <ContactSection />
       </section>
     </Layout>
   )
@@ -41,6 +49,11 @@ export const query = graphql`
           pageTitle
           profileImage {
             fluid(cropFocus: FACES, resizingBehavior: CROP) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          subImage {
+            fluid(resizingBehavior: CROP) {
               ...GatsbyContentfulFluid_withWebp
             }
           }

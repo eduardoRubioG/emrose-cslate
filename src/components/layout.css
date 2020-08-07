@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -25,6 +25,10 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  * > p {
+    font-family: 'Roboto', sans-serif;
   }
 
   .sub-body { 
