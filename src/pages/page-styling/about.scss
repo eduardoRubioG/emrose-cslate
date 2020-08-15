@@ -1,23 +1,11 @@
 .about {
   &__header-text {
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    justify-content: center;
     padding: 2em 0;
-  }
-
-  &__emma {
-    margin-right: 100px;
-  }
-
-  &__rose {
-    margin-left: 100px;
-  }
-
-  &__intro-grid {
-  }
-
-  &__main-img {
+    & > h1 {
+      text-transform: uppercase;
+    }
   }
 
   &__sub-img {
@@ -50,13 +38,10 @@
   .about {
     &__intro-grid {
       display: grid;
-      height: calc(100vh - 176px);
+      height: calc(100vh - 120px);
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr);
       justify-content: flex-end;
-    }
-
-    &__intro-text {
     }
 
     &__main-img {

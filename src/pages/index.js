@@ -31,11 +31,13 @@ const IndexPage = ({data}) => (
                 align={'right'}
                 title={data.allContentfulGallery.edges[0].node.title}
                 {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
+                slug={data.allContentfulGallery.edges[0].node.slug}
             />
             <GalleryHeader 
                 align={'left'}
-                title={data.allContentfulGallery.edges[0].node.title}
-                {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
+                title={data.allContentfulGallery.edges[1].node.title}
+                {...data.allContentfulGallery.edges[1].node.coverImage.fluid}
+                slug={data.allContentfulGallery.edges[1].node.slug}
             />
 
         <Button content="Visit my full portfolio" to="/portfolio/" pos={true}></Button>
@@ -48,22 +50,18 @@ const IndexPage = ({data}) => (
 
 export const query = graphql`
 query { 
-  allContentfulGallery(filter: {title: {eq: "Weddings"}}) {
+  allContentfulGallery(limit: 2) {
     edges {
       node {
+        slug
         title
         coverImage {
-          fluid {
-            base64 
-            aspectRatio 
-            src 
-            srcSet 
-            sizes 
-            tracedSVG
-          }
+          fluid(cropFocus: FACES, resizingBehavior: CROP){ 
+            ...GatsbyContentfulFluid_withWebp
         }
       }
     }
+  }
   }
   allContentfulFeaturedImageBannerLarge(limit: 1) {
     edges {

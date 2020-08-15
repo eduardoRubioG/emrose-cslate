@@ -96,7 +96,7 @@ $transition--length: .8;
 
 //active state
 body.nav-active{
-	$menu--items--count: 4; // TODO: Change when the blog is added
+	$menu--items--count: 3; // TODO: Change when the blog is added
 	.menu-icon{
 		&__line{
 			background-color: var(--mainbg);
