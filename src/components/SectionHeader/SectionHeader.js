@@ -12,7 +12,7 @@ export default class SectionHeader extends Component {
           <line y1="2" x2="75" y2="2" stroke="#F0EAD6" strokeWidth="5"/>
           <line x1="150" y1="2" x2="225" y2="2" stroke="#D3827F" strokeWidth="5"/>
         </svg>
-        <h4 className="content"> {this.props.content} </h4>
+        <p className="content"> {this.props.content} </p>
       </div>
     )
   };
