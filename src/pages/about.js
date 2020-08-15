@@ -7,15 +7,10 @@ import "./page-styling/about.scss"
 
 export default function about({ data }) {
   const pageData = data.allContentfulAboutPage.edges[0].node
-  // pageData.pageTitle
-  // pageData.description.description
-  // pageData.profileImage.fluid
-  // pageData.subImage.fluid
   return (
     <Layout>
       <div className="about__header-text">
-        <h1 className="about__emma">Emma</h1>
-        <h1 className="about__rose">Rose</h1>
+        <h1>Emma Rose</h1>
       </div>
       <section className="about__intro-grid">
         <Img fluid={pageData.profileImage.fluid} className="about__main-img" />
@@ -24,7 +19,7 @@ export default function about({ data }) {
           <p>
             {pageData.subtext
               ? pageData.subtext
-              : "No subtext gotten from the CMS"}
+              : ""}
           </p>
         </div>
         <Img fluid={pageData.subImage.fluid} className="about__sub-img" />

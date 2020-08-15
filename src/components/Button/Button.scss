@@ -14,7 +14,6 @@
     width: 100%;
     transition: transform ease 450ms;
     transform: scaleX(0);
-    // transform-origin: right;
     transform-origin: left;
   }
   &:hover { 
@@ -25,7 +24,6 @@
       content: ""; 
       transform: scaleX(1);
       z-index: -1;
-      // transform-origin: left;
     }
   }
 
