@@ -12,13 +12,16 @@ import Icons from "../components/Icons/Icons"
 import FeaturedImageBannerLarge from "../components/FeaturedImageBannerL/FeaturedImageBannerL"
 import FeaturedImageBannerSmall from "../components/FeaturedImageBannerS/FeaturedImageBannerS"
 
-const IndexPage = ({data}) => (
+const IndexPage = ({data}) => {
+  const pageText = data.allContentfulHomePage.edges[0].node; 
+  const galleryPage = data.allContentfulGallery.edges; 
+  return (
     <Layout>
       <SEO title="Home" />
         <Hero/>
         <SectionHeader 
-            title="Welcome to my page!"
-            content="Sit culpa proident fugiat tempor reprehenderit officia id velit."
+            title={pageText.sectionHeaderOne}
+            content={pageText.sectionHeaderOneContent.sectionHeaderOneContent}
         />
         <Icons 
             icons={['camera_alt','camera_alt','camera_alt']}
@@ -26,30 +29,42 @@ const IndexPage = ({data}) => (
             iconSizes={['48','48','48']}
         />
         <FeaturedImageBannerLarge data={data.allContentfulFeaturedImageBannerLarge}/>
-        <SectionHeader title="Check out collections" />
+        <SectionHeader title={pageText.sectionHeaderTwo} />
             <GalleryHeader 
                 align={'right'}
-                title={data.allContentfulGallery.edges[0].node.title}
-                {...data.allContentfulGallery.edges[0].node.coverImage.fluid}
-                slug={data.allContentfulGallery.edges[0].node.slug}
+                data={galleryPage[0].node}
             />
             <GalleryHeader 
                 align={'left'}
-                title={data.allContentfulGallery.edges[1].node.title}
-                {...data.allContentfulGallery.edges[1].node.coverImage.fluid}
-                slug={data.allContentfulGallery.edges[1].node.slug}
+                data={galleryPage[1].node}
             />
 
-        <Button content="Visit my full portfolio" to="/portfolio/" pos={true}></Button>
+        <Button content={pageText.portfolioButton} to="/portfolio/" pos={true}></Button>
         <FeaturedImageBannerSmall data={data.allContentfulFeaturedImageBannerSmall}/>
         <HomeBlogSection /> 
-        <SectionHeader title="Lets connect"/>
-        <ContactSection /> 
+        <SectionHeader title={pageText.sectionHeaderThree}/>
+        <ContactSection content={pageText.contactSectionContent.contactSectionContent}/> 
     </Layout>
-);
+);}
 
 export const query = graphql`
 query { 
+  allContentfulHomePage(limit: 1) {
+    edges {
+      node {
+        sectionHeaderOne
+        sectionHeaderOneContent {
+          sectionHeaderOneContent
+        }
+        sectionHeaderTwo
+        portfolioButton
+        sectionHeaderThree
+        contactSectionContent {
+          contactSectionContent
+        }
+      }
+    }
+  }
   allContentfulGallery(limit: 2) {
     edges {
       node {

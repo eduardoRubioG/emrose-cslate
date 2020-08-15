@@ -5,32 +5,21 @@ import "./GalleryHeader.scss"
 
 export default class GalleryHeader extends Component {
   constructor(props) {
-    super(props)
-    const image = {
-      base64: props.base64,
-      src: props.src,
-      aspectRatio: props.aspectRatio,
-      srcSet: props.srcSet,
-      sizes: props.sizes,
-      tracedSVG: props.tracedSVG,
-    }
+    super(props); 
     this.state = {
-      _title: props.title,
-      _image: image,
-      _slug: props.slug,
+      data: props.data, 
       containerClass: `gallery-header__container-${props.align}`,
     }
   }
   render() {
-    console.log("Here", this.state.containerClass);
     return (
-      <div className={this.state.containerClass} onClick={()=>{navigate(`/portfolio/${this.state._slug}`)}}>
+      <div className={this.state.containerClass} onClick={()=>{navigate(`/portfolio/${this.state.data.slug}`)}}>
         <div className="gallery-header__title">
-          <h3>{this.state._title}</h3>
+          <h3>{this.state.data.title}</h3>
         </div>
         <Img
           className="gallery-header__cover-image"
-          fluid={this.state._image}
+          fluid={this.state.data.coverImage.fluid}
           alt="Featured gallery header"
         />
       </div>
