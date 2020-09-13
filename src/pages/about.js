@@ -10,7 +10,7 @@ export default function about({ data }) {
   return (
     <Layout>
       <div className="about__header-text">
-        <h1>Emma Rose</h1>
+        <h1>{pageData.pageTitle ? pageData.pageTitle : 'About me'}</h1>
       </div>
       <section className="about__intro-grid">
         <Img fluid={pageData.profileImage.fluid} className="about__main-img" />

@@ -4,6 +4,7 @@ exports.createPages = async function ({ actions, graphql }) {
       allContentfulGallery { 
         edges { 
           node { 
+            title
             slug
           }
         }
@@ -12,7 +13,7 @@ exports.createPages = async function ({ actions, graphql }) {
   `)
   /* Create all the Gallery pages */
   data.allContentfulGallery.edges.forEach((edge) => { 
-    const slug = edge.node.slug; 
+    const slug = edge.node.slug ? edge.node.slug : edge.node.title 
     actions.createPage({ 
     path: `/portfolio/${slug}`, 
     component: require.resolve(`./src/templates/Gallery/Gallery.js`),
