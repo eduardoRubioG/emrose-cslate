@@ -35,6 +35,7 @@
   border: 0.25rem solid;
   border-image: linear-gradient(to left, var(--highlight), var(--primary)); 
   border-image-slice: 1;  
+  transition: height 220ms linear; 
 }
 
 #form__message-box:focus { 
