@@ -22,7 +22,6 @@ export default function about({ data }) {
               : ""}
           </p>
         </div>
-        <Img fluid={pageData.subImage.fluid} className="about__sub-img" />
       </section>
 
       <section className="about__contact-section">
@@ -44,11 +43,6 @@ export const query = graphql`
           pageTitle
           profileImage {
             fluid(cropFocus: FACES, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-          subImage {
-            fluid(resizingBehavior: CROP) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
