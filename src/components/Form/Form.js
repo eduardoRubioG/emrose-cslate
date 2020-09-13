@@ -32,7 +32,12 @@ export default class MyForm extends React.Component {
         <div className="form__input-wrapper">
           <input type="tel" name="phone" placeholder="Phone Number"/>
         </div>
-        <textarea name="message" placeholder="Message" id="form__message-box"></textarea>
+          <textarea 
+          name="message" 
+          placeholder="Message" 
+          id="form__message-box"
+          data-gramm="false"
+          ></textarea>
         {status === "SUCCESS" ? <p>Thanks!</p> : 
           <div className="form__submit-button-wrapper">
             <button className="form__submit-button">Send</button>
