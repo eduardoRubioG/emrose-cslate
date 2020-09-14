@@ -5,36 +5,37 @@ import "./HomeBlogSection.css"
 import { useStaticQuery, graphql } from "gatsby"
 
 const HomeBlogSection = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost(
-        filter: { featuredOnHomePage: { eq: true } }
-        limit: 1
-      ) {
-        edges {
-          node {
-            title
-            content {
-              json
-            }
-            coverImage {
-              fluid {
-                base64
-                aspectRatio
-                src
-                srcSet
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const data = undefined; 
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allContentfulBlogPost(
+  //       filter: { featuredOnHomePage: { eq: true } }
+  //       limit: 1
+  //     ) {
+  //       edges {
+  //         node {
+  //           title
+  //           content {
+  //             json
+  //           }
+  //           coverImage {
+  //             fluid {
+  //               base64
+  //               aspectRatio
+  //               src
+  //               srcSet
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   return data ? (
     <div></div>
   ) : (
     <>
-      <SectionHeader title="Journal" />
+      {/* <SectionHeader title="Journal" />
       <div className="home-blog-section__container">
         <BlogHeader
           icon="sports_tennis"
@@ -48,7 +49,7 @@ const HomeBlogSection = () => {
           {...data.allContentfulBlogPost.edges[0].node.coverImage.fluid}
           content={data.allContentfulBlogPost.edges[0].node.content.json}
         />
-      </div>
+      </div> */}
     </>
   )
 }

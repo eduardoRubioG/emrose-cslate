@@ -2,8 +2,7 @@ import React from 'react'
 import Form from '../Form/Form'
 import './ContactSection.css'
 
-export default function ContactSection(props) {
-  console.log("CONTACT PROPS", props); 
+export default function ContactSection(props) { 
   return (
     <div className="ContactSection__container">
     <p className="ContactSection__content">{props.content ? props.content : "Don't be afraid to reach out!"}</p>

@@ -2,7 +2,6 @@
   margin: 0 auto; 
   width: 70%; 
   min-width: 200px; 
-  /* background: yellow;  */
 }
 
 .sh-container > h2 { 
@@ -19,9 +18,8 @@
 .content { 
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  text-align: center; 
-  max-width: 70%; 
-  min-width: 60%; 
+  text-align: center;
+  max-width: 700px;  
   margin: 0 auto; 
   margin-top: 2rem; 
 }

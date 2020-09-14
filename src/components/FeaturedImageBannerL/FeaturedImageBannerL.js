@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import "./FeaturedImageBannerL.scss"
 
 const FeaturedImageBannerL = props => {
-  const centerPiece = props.data.edges[0].node.centerPiece.fluid
+  const centerPiece = props.data.edges[0].node.centerpiece.fluid
   const topleft = props.data.edges[0].node.sideImages[0].fluid
   const bottomleft = props.data.edges[0].node.sideImages[1].fluid
   const topright = props.data.edges[0].node.sideImages[2].fluid

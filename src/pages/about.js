@@ -33,6 +33,7 @@ export default function about({ data }) {
 }
 
 export const query = graphql`
+
   query {
     allContentfulAboutPage(limit: 1) {
       edges {
